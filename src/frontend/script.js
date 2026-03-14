@@ -53,7 +53,7 @@ function updateHistory(state) {
 function renderState(state) {
     document.getElementById("year").textContent = `Year: ${state.year}`;
     document.getElementById("week").textContent = `Week: ${state.week}`;
-    document.getElementById("scenario-text").textContent = state.question;
+    document.getElementById("scenario-text").textContent = state.scenario;
 
     setBalance(state.balance);
     document.getElementById("happiness").textContent = state.happiness.toFixed(1);
@@ -64,11 +64,11 @@ function renderState(state) {
     const choicesDiv = document.getElementById("choices");
     choicesDiv.innerHTML = "";
 
-    state.options.forEach(option => {
+    state.choices.forEach(option => {
         const btn = document.createElement("button");
         btn.className = "choice-btn";
-        btn.textContent = option.option_text;
-        btn.onclick = () => submitChoice(option.choice_id);
+        btn.textContent = option.text;
+        btn.onclick = () => submitChoice(option.id);
         choicesDiv.appendChild(btn);
     });
 

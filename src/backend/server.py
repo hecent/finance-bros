@@ -35,7 +35,7 @@ game_state = {
     "balance": 1000,
     "happiness": 50,
     "grades": 12,
-    "options": [
+    "choices": [
         # {"id": 1, "text": "Stay home and finish the assignment"},
         # {"id": 2, "text": "Go out with friends"}
     ]
@@ -144,14 +144,15 @@ def get_state():
 
 @app.route("/choose", methods=["POST"])
 def choose():
-    data = request.json
+    data = request.get_json()
+    print("data", data)
     choice_id = data["choice_id"]
 
     print("User chose:", choice_id)
 
     print(choice_id, option_effects)
 
-    effects = next((item for item in option_effects if item["id"] == choice_id), None)#option_effects[choice_id]
+    effects = option_effects[choice_id]
     game_state["grades"] += effects["gradesCh"]
     game_state["happiness"] += effects["happinessCh"]
     game_state["balance"] += effects["balanceCh"]
