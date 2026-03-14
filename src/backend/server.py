@@ -141,6 +141,7 @@ def get_state():
 
 @app.route("/choose", methods=["POST"])
 def choose():
+    global option_effects
     data = request.get_json()
     print("data", data)
     choice_id = data["choice_id"]
@@ -165,14 +166,21 @@ def choose():
         random.shuffle(passive_events_list)
         for event in passive_events_list:
             if random.random() < event.probability:
-                game_state["passive_event_text"] = event.message
-                game_state["balance"] += event.effect.money
-                game_state["happiness"] += event.effect.happiness
-                game_state["grades"] += event.effect.grades
+                game_state["scenario"] = event.message
                 game_state["last_passive_week"] = game_state["week"]
+                game_state["choices"]=[{
+            "id": 0,
+            "text": "Ok"
+            }]
+                option_effects = [{
+            "id": 0,
+            "balanceCh": event.effect.money,
+            "gradesCh": event.effect.grades,
+            "happinessCh": event.effect.happiness
+        }]
                 break
-
-    getNewLevel()
+    else:
+        getNewLevel()
     toreturn = jsonify(game_state)
     return toreturn
 
