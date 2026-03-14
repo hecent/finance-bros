@@ -67,11 +67,6 @@ function renderState(state) {
     void scenarioText.offsetWidth; // Trigger DOM reflow to restart animation
     scenarioText.textContent = state.scenario;
     scenarioText.classList.add("animate-text");
-    if (state.game_over === true) {
-        let score = (state.happiness + state.balance + state.grades) / 100
-        alert(`Game over. Score: ${score}`);
-        resetState()
-    }
 
     setBalance(state.balance);
     document.getElementById("happiness").textContent = state.happiness.toFixed(1);

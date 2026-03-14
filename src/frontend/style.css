@@ -33,7 +33,7 @@ body {
 }
 
 .left-panel {
-    flex: 7;
+    flex: 6.5; /* Adjusted for wider graph */
     padding: 40px;
     background: var(--panel-bg);
     border-right: 1px solid var(--border-color);
@@ -42,7 +42,7 @@ body {
 }
 
 .right-panel {
-    flex: 3;
+    flex: 3.5; /* Adjusted for wider graph */
     padding: 40px;
     background: #fafafa;
     display: flex;
