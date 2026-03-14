@@ -1,0 +1,26 @@
+{
+  "initial_decisions": [
+    {
+      "Question": ""
+    }
+  ],
+  "weekly_decisions": [
+    {
+      "question": "The library is closed, do you want to take a taxi to a cafe in town?",
+      "options": [
+        {
+          "option_text": "Take the taxi",
+          "balance_change": -20.0,
+          "happiness_change": 4.0,
+          "grades_change": 0.3
+        },
+        {
+          "option_text": "Stay Home",
+          "balance_change": 0.0,
+          "happiness_change": -2.0,
+          "grades_change": 0.1
+        }
+      ]
+    }
+  ]
+}
