@@ -70,7 +70,7 @@ def getNewLevel():
         currentdecision = dm.pick() #dm.pick_and_remove() # uncomment to stop repeats
     else:
         prompt = f"""
-This is a game where you play as a CS student at st andrews, each week you are given multiple different random decisions to make that can affect balance, happiness and grades. Given a probability you should create a random decision with options and outcomes (grades follow a 20-point scale, happiness is 0-100, balance is in £ and can go negative). The focus of the game is about teaching students money skills but also be fun and humorous at the same time. FYI frshers week is week 1 only.
+This is a game where you play as a CS student at st andrews, each week you are given multiple different random decisions to make that can affect balance, happiness and grades. Given a probability you should create a random decision with options and outcomes (grades follow a 20-point scale, happiness is 0-100, balance is in £ and can go negative). The focus of the game is about teaching students money skills but also be fun and humorous at the same time. FYI frshers week is week 1 only. the year is 12 weeks long
 
 Example:
 {{
