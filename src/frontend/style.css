@@ -86,3 +86,18 @@ h1, h2 {
     font-size: 24px;
     font-weight: bold;
 }
+
+.positive {
+    color: green;
+    font-weight: bold;
+}
+
+.negative {
+    color: red;
+    font-weight: bold;
+}
+
+.neutral {
+    color: #333;
+    font-weight: bold;
+}
