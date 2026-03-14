@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Life Simulator - Official Tutorial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .tutorial-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 32px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: #2563eb;
+            font-size: 32px;
+            margin-top: 0;
+            text-align: center;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 16px;
+        }
+
+        h2 {
+            color: #1d4ed8;
+            font-size: 24px;
+            margin-top: 32px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .stat-highlight {
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        .grade-first { color: #209c05; font-weight: bold; }
+        .grade-two-one { color: #5c9e1e; font-weight: bold; }
+        .grade-two-two { color: #a1b005; font-weight: bold; }
+        .grade-third { color: #d97706; font-weight: bold; }
+        .grade-fail { color: #dc2626; font-weight: bold; }
+
+        /* Interactive Demo Styles */
+        .demo-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e5e7eb;
+        }
+
+        .scenario-box {
+            background: #f8fbff;
+            border: 1px solid #d6e6f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .choice-btn {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 6px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .choice-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .choice-btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        .stats-box {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .feedback-text {
+            font-weight: bold;
+            color: #166534;
+            min-height: 1.5em;
+            margin-top: 16px;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="tutorial-container">
+        <h1>Welcome to University Life Simulator</h1>
+        <p>Think of this as a survival game, but instead of fighting dragons, you are battling essay deadlines, budgeting your student loan, and trying to get enough sleep. Welcome to St. Andrews. Here is your official guide to surviving your degree.</p>
+
+        <h2>The Core Stats</h2>
+        <p>You have three main statistics to balance. If any of these drop too low, your university career could be in serious trouble.</p>
+
+        <h3>1. Balance (Money)</h3>
+        <p>You start Year 1 with <span class="stat-highlight">£1000</span>. At the start of each new academic year, you will receive a fresh stipend of £1000. Every night out, takeaway meal, or expensive textbook will drain this account. Run out of money, and you will be forced to make tough, high-stress choices.</p>
+
+        <h3>2. Happiness</h3>
+        <p>You start at <span class="stat-highlight">50 out of 100</span>. University is stressful. If you only study and never take a break, this stat will tank. You need to engage in hobbies, attend society events, and socialize to keep your morale high.</p>
+
+        <h3>3. Grades</h3>
+        <p>Your academic standing is graded out of 20. Every year, you start with a clean slate at exactly <span class="stat-highlight">10 points</span>. Your goal is to push this score as high as possible. The game classifies your grades into the following UK degree tiers:</p>
+        <ul>
+            <li><span class="grade-first">16.5 or higher: First Class</span></li>
+            <li><span class="grade-two-one">13.5 to 16.4: Upper Second Class (2:1)</span></li>
+            <li><span class="grade-two-two">10.5 to 13.4: Lower Second Class (2:2)</span></li>
+            <li><span class="grade-third">7.0 to 10.4: Third Class</span></li>
+            <li><span class="grade-fail">Below 7.0: Fail</span></li>
+        </ul>
+
+        <div class="demo-section">
+            <h2>Try It Out: Interactive Demo</h2>
+            <p>Make a choice below to see how the game engine calculates your decisions in real-time.</p>
+            
+            <div class="scenario-box">
+                <p><strong>Scenario:</strong> The library is closed, do you want to take a taxi to a cafe in town?</p>
+                <div class="button-group">
+                    <button id="btn-taxi" class="choice-btn">Option A: Take the taxi</button>
+                    <button id="btn-home" class="choice-btn">Option B: Stay Home</button>
+                </div>
+            </div>
+
+            <div class="stats-box" aria-live="polite" aria-atomic="true">
+                <h3>Current Stats:</h3>
+                <ul>
+                    <li>Balance: £<span id="demo-balance">1000</span></li>
+                    <li>Happiness: <span id="demo-happiness">50</span> / 100</li>
+                    <li>Grades: <span id="demo-grades">10.0</span> / 20</li>
+                </ul>
+                <p id="demo-feedback" class="feedback-text">Awaiting your decision...</p>
+            </div>
+        </div>
+
+        <h2>How to Win</h2>
+        <p>There is no perfect path. If you only focus on grinding for a First Class degree, your happiness will plummet. If you spend all your money on VIP concert tickets, you will not be able to afford emergency expenses like a broken laptop.</p>
+        <p>Your goal is steady progression. Treat your stats like a delicate ecosystem. Make smart choices, manage your resources, and try to make it to graduation with a solid degree, a positive bank balance, and your sanity intact. Good luck!</p>
+
+        <div class="footer-note">
+            <p>Ready to start your first year? Enter the simulator and make your choices.</p>
+        </div>
+    </main>
+
+    <script>
+        // Interactive Demo Logic
+        const btnTaxi = document.getElementById('btn-taxi');
+        const btnHome = document.getElementById('btn-home');
+        const demoBalance = document.getElementById('demo-balance');
+        const demoHappiness = document.getElementById('demo-happiness');
+        const demoGrades = document.getElementById('demo-grades');
+        const demoFeedback = document.getElementById('demo-feedback');
+
+        // Starting values
+        let currentBalance = 1000;
+        let currentHappiness = 50;
+        let currentGrades = 10.0;
+
+        function updateDisplay() {
+            demoBalance.textContent = currentBalance;
+            demoHappiness.textContent = currentHappiness;
+            demoGrades.textContent = currentGrades.toFixed(1);
+        }
+
+        function disableButtons() {
+            btnTaxi.disabled = true;
+            btnHome.disabled = true;
+        }
+
+        btnTaxi.addEventListener('click', () => {
+            currentBalance -= 20;
+            currentHappiness += 4;
+            currentGrades += 0.3;
+            
+            updateDisplay();
+            demoFeedback.textContent = "Outcome: You took the taxi. Your balance dropped by £20, your happiness went up by 4 points, and your grades improved by 0.3 points.";
+            disableButtons();
+        });
+
+        btnHome.addEventListener('click', () => {
+            currentHappiness -= 2;
+            currentGrades += 0.1;
+            
+            updateDisplay();
+            demoFeedback.textContent = "Outcome: You stayed home. Your balance stayed the same, your happiness dropped by 2 points, and your grades improved slightly by 0.1 points.";
+            disableButtons();
+        });
+    </script>
+</body>
+</html>
