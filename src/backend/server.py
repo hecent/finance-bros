@@ -36,7 +36,7 @@ game_state = {
     "scenario": "",
     "passive_event_text": "",
     "last_passive_week": -3, # Ensures an event can trigger from week 1
-    "balance": 10,
+    "balance": 1000,
     "happiness": 50,
     "grades": 12,
     "choices": [],
@@ -139,6 +139,25 @@ def get_state():
         getNewLevel()
     print(game_state)
     return jsonify(game_state)
+
+@app.route("/reset")
+def reset_state():
+    global game_state
+    game_state = {
+    "year": 1,
+    "week": 1,
+    "scenario": "",
+    "passive_event_text": "",
+    "last_passive_week": -3, # Ensures an event can trigger from week 1
+    "balance": 10,
+    "happiness": 50,
+    "grades": 12,
+    "choices": [],
+    "game_over": False
+    }
+    getNewLevel()
+    return jsonify(game_state)
+
 
 @app.route("/choose", methods=["POST"])
 def choose():
