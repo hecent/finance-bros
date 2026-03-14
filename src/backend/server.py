@@ -34,7 +34,6 @@ game_state = {
     "year": 1,
     "week": 1,
     "scenario": "",
-    "passive_event_text": "",
     "last_passive_week": -3, # Ensures an event can trigger from week 1
     "balance": 1000,
     "happiness": 50,
@@ -65,11 +64,13 @@ dm = DecisionManager("decisions.json")
 def getNewLevel():
     global option_effects
     global dm
+    game_state["scenario"] = ""
+    game_state["choices"] = []
     if random.random()>0.7:
         currentdecision = dm.pick() #dm.pick_and_remove() # uncomment to stop repeats
     else:
         prompt = f"""
-This is a game where you play as a CS student at st andrews, each week you are given multiple different random decisions to make that can affect balance, happiness and grades. Given a probability you should create a random decision with options and outcomes (grades follow a 20-point scale, happiness is 0-100, balance is in £ and can go negative). The focus of the game is about teaching students money skills but also be fun and humorous at the same time.
+This is a game where you play as a CS student at st andrews, each week you are given multiple different random decisions to make that can affect balance, happiness and grades. Given a probability you should create a random decision with options and outcomes (grades follow a 20-point scale, happiness is 0-100, balance is in £ and can go negative). The focus of the game is about teaching students money skills but also be fun and humorous at the same time. FYI frshers week is week 1 only.
 
 Example:
 {{
@@ -187,7 +188,6 @@ def choose():
         return jsonify(game_state)
 
     # --- PASSIVE EVENT LOGIC ---
-    game_state["passive_event_text"] = ""
     # Check if at least 4 weeks have passed since the last event
     if game_state["week"] - game_state.get("last_passive_week", -3) >= 4:
         # Shuffle to pick a random candidate
