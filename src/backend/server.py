@@ -34,12 +34,12 @@ game_state = {
     "year": 1,
     "week": 1,
     "scenario": "",
-    "passive_event_text": "",
     "last_passive_week": -3, # Ensures an event can trigger from week 1
     "balance": 1000,
     "happiness": 50,
     "grades": 12,
-    "choices": []
+    "choices": [],
+    "game_over": False
 }
 
 class Effect(BaseModel):
@@ -57,46 +57,54 @@ class Scenario(BaseModel):
 
 client = genai.Client(api_key=API_KEY)
 
-prompt = """
-This is a game where you play as a CS student at st andrews, each week you are given multiple different random decisions to make that can affect balance, happiness and grades. Given a probability you should create a random decison with options and outcomes (grades follow a 20-point scale, happiness is 0-100, balance is in £ and can go negative). The probability affects how liekly the event should be, with a high probability being something simple like going to cafe and a low probability being a major event like a house fire or getting drafted for ww3. The focus of the game is about teaching students money skills but also be fun and humorous at the same times, bear that in mind. A decision can have an umilimited number of options, or even just one option if its something like an event.
-
-E.g:
-{
-      "description": "You have a major Computer Science project due tomorrow, but your code is throwing endless errors.",
-      "options": [
-        {
-          "text": "Stay up all night debugging.",
-          "effect":{
-          "money": -5.0,
-          "happiness": -10.0,
-          "grades": 1.5}
-        },
-        {
-          "text": "Submit what you have and go to sleep.",
-          "effect":{
-          "money": 0.0,
-          "happiness": 8.0,
-          "grades": -1.5}
-        },
-        {
-          "text": "Pay a tutor for emergency help.",
-          "effect":{
-          "money": -40.0,
-          "happiness": -2.0,
-          "grades": 1.0}
-        }
-      ]
-}
-"""
 
 option_effects = []
+dm = DecisionManager("decisions.json")
 
 def getNewLevel():
     global option_effects
-    dm = DecisionManager("decisions.json")
-    if random.random() > 0.9:
-        currentdecision = dm.pick_and_remove()
+    global dm
+    game_state["scenario"] = ""
+    game_state["choices"] = []
+    if random.random()>0.7:
+        currentdecision = dm.pick() #dm.pick_and_remove() # uncomment to stop repeats
     else:
+        prompt = f"""
+This is a game where you play as a CS student at st andrews, each week you are given multiple different random decisions to make that can affect balance, happiness and grades. Given a probability you should create a random decision with options and outcomes (grades follow a 20-point scale, happiness is 0-100, balance is in £ and can go negative). The focus of the game is about teaching students money skills but also be fun and humorous at the same time. FYI frshers week is week 1 only. the year is 12 weeks long
+
+Example:
+{{
+  "description": "You have a major Computer Science project due tomorrow, but your code is throwing endless errors.",
+  "options": [
+    {{
+      "text": "Stay up all night debugging.",
+      "effect": {{
+        "money": -5.0,
+        "happiness": -10.0,
+        "grades": 1.5
+      }}
+    }},
+    {{
+      "text": "Submit what you have and go to sleep.",
+      "effect": {{
+        "money": 0.0,
+        "happiness": 8.0,
+        "grades": -1.5
+      }}
+    }},
+    {{
+      "text": "Pay a tutor for emergency help.",
+      "effect": {{
+        "money": -40.0,
+        "happiness": -2.0,
+        "grades": 1.0
+      }}
+    }}
+  ]
+}}
+
+Current game state: {game_state}
+"""
         response = client.models.generate_content(
             model="gemini-2.5-flash-lite",
             contents=prompt,
@@ -112,9 +120,7 @@ def getNewLevel():
     newChoices = []
     newOptionEffects = []
     options = currentdecision.options
-    
-    # Starting count at 0 ensures choice_id aligns correctly with the option_effects array
-    count = 0 
+    count = 0
     for option in options:
         newChoices.append({
             "id": count,
@@ -140,8 +146,28 @@ def get_state():
     print(game_state)
     return jsonify(game_state)
 
+@app.route("/reset")
+def reset_state():
+    global game_state
+    game_state = {
+    "year": 1,
+    "week": 1,
+    "scenario": "",
+    "passive_event_text": "",
+    "last_passive_week": -3, # Ensures an event can trigger from week 1
+    "balance": 10,
+    "happiness": 50,
+    "grades": 12,
+    "choices": [],
+    "game_over": False
+    }
+    getNewLevel()
+    return jsonify(game_state)
+
+
 @app.route("/choose", methods=["POST"])
 def choose():
+    global option_effects
     data = request.get_json()
     print("data", data)
     choice_id = data["choice_id"]
@@ -150,30 +176,39 @@ def choose():
     print(choice_id, option_effects)
 
     effects = option_effects[choice_id]
-    game_state["grades"] += effects["gradesCh"]
-    game_state["happiness"] += effects["happinessCh"]
+    game_state["grades"] = max(0.0, min(20.0, game_state["grades"] + effects["gradesCh"]))
+    game_state["happiness"] = max(0.0, min(100.0, game_state["happiness"] + effects["happinessCh"]))
     game_state["balance"] += effects["balanceCh"]
     game_state["week"] += 1
 
-    if (game_state["week"] > 12):
-        print("AHHASDLF;HJASD;LFGHEWARFDPOAHFGPOSDZIHFGPAWSHDHWEPIOUHFPADHPASDHFSOLKFHAPEHRFPOW")
+
+    #Game Over Check
+    if game_state["week"] > 12:
+        game_state["game_over"] = True
+        return jsonify(game_state)
 
     # --- PASSIVE EVENT LOGIC ---
-    game_state["passive_event_text"] = ""
     # Check if at least 4 weeks have passed since the last event
     if game_state["week"] - game_state.get("last_passive_week", -3) >= 4:
         # Shuffle to pick a random candidate
         random.shuffle(passive_events_list)
         for event in passive_events_list:
             if random.random() < event.probability:
-                game_state["passive_event_text"] = event.message
-                game_state["balance"] += event.effect.money
-                game_state["happiness"] += event.effect.happiness
-                game_state["grades"] += event.effect.grades
+                game_state["scenario"] = event.message
                 game_state["last_passive_week"] = game_state["week"]
+                game_state["choices"]=[{
+            "id": 0,
+            "text": "Ok"
+            }]
+                option_effects = [{
+            "id": 0,
+            "balanceCh": event.effect.money,
+            "gradesCh": event.effect.grades,
+            "happinessCh": event.effect.happiness
+        }]
                 break
-
-    getNewLevel()
+    else:
+        getNewLevel()
     toreturn = jsonify(game_state)
     return toreturn
 
