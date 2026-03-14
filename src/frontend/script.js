@@ -13,7 +13,6 @@ const statHistory = {
 function setBalance(value) {
     const el = document.getElementById("balance");
     el.textContent = `£${value}`;
-    statHistory.balance.push(value)
 
     el.classList.remove("positive", "negative", "neutral");
 
@@ -28,7 +27,7 @@ function setBalance(value) {
 
 function setGrade(value) {
     const el = document.getElementById("grades");
-    el.textContent = value;
+    el.textContent = value.toFixed(1);
 
     el.classList.remove("first", "two-one", "two-two", "third", "fail");
 
@@ -36,35 +35,40 @@ function setGrade(value) {
         el.classList.add("first");
     } else if (value >= 13.5) {
         el.classList.add("two-one");
-    } else if (value >= 10.5){
+    } else if (value >= 10.5) {
         el.classList.add("two-two");
-    }else if (value >= 7){
+    } else if (value >= 7) {
         el.classList.add("third");
-    }
-    else {
+    } else {
         el.classList.add("fail");
     }
 }
 
+function updateHistory(state) {
+    statHistory.balance.push(state.balance);
+    statHistory.happiness.push(state.happiness);
+    statHistory.grades.push(state.grades);
+}
+
 function renderState(state) {
-
-
     document.getElementById("year").textContent = `Year: ${state.year}`;
     document.getElementById("week").textContent = `Week: ${state.week}`;
-    document.getElementById("scenario-text").textContent = state.scenario;
+    document.getElementById("scenario-text").textContent = state.question;
 
-    setBalance(state.balance);// document.getElementById("balance").textContent = `£${state.balance}`;
-    document.getElementById("happiness").textContent = state.happiness;
+    setBalance(state.balance);
+    document.getElementById("happiness").textContent = state.happiness.toFixed(1);
     setGrade(state.grades);
+
+    updateHistory(state);
 
     const choicesDiv = document.getElementById("choices");
     choicesDiv.innerHTML = "";
 
-    state.choices.forEach(choice => {
+    state.options.forEach(option => {
         const btn = document.createElement("button");
         btn.className = "choice-btn";
-        btn.textContent = choice.text;
-        btn.onclick = () => submitChoice(choice.id);
+        btn.textContent = option.option_text;
+        btn.onclick = () => submitChoice(option.choice_id);
         choicesDiv.appendChild(btn);
     });
 
@@ -84,13 +88,6 @@ async function submitChoice(choiceId) {
     renderState(state);
 }
 
-function updateHistory(state) {
-    statHistory.balance.push(state.balance);
-    statHistory.happiness.push(state.happiness);
-    statHistory.grades.push(state.grades);
-    drawGraph(statHistory);
-}
-
 const canvas = document.getElementById("statsGraph");
 const ctx = canvas.getContext("2d");
 
@@ -107,6 +104,8 @@ function drawGraph(history) {
         ...history.grades
     ];
 
+    if (allValues.length === 0) return;
+
     const minValue = Math.min(...allValues);
     const maxValue = Math.max(...allValues);
     const weekCount = Math.max(
@@ -116,6 +115,7 @@ function drawGraph(history) {
     );
 
     function xScale(i) {
+        if (weekCount <= 1) return padding;
         return padding + (i / (weekCount - 1)) * (width - padding * 2);
     }
 
@@ -174,7 +174,5 @@ function drawGraph(history) {
     drawLine(history.happiness, "#e67e22", "Happiness", 40);
     drawLine(history.grades, "#27ae60", "Grades", 60);
 }
-
-
 
 fetchState();
