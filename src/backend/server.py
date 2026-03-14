@@ -149,8 +149,8 @@ def choose():
     print(choice_id, option_effects)
 
     effects = option_effects[choice_id]
-    game_state["grades"] += effects["gradesCh"]
-    game_state["happiness"] += effects["happinessCh"]
+    game_state["grades"] = max(0.0, min(20.0, game_state["grades"] + effects["gradesCh"]))
+    game_state["happiness"] = max(0.0, min(100.0, game_state["happiness"] + effects["happinessCh"]))
     game_state["balance"] += effects["balanceCh"]
     game_state["week"] += 1
 
