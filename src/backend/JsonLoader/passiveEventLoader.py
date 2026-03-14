@@ -9,13 +9,13 @@ def load_passive_events(filename):
     events = []
 
     for event in data["passive_events"]:
-        effect = Effect (
-            money = event["money_change"],
-            happiness= event["happiness_change"],
-            grades= event ["grades_change"]
+        new_effect = Effect (
+            money=data["money_change"],
+            happiness=data["happiness_change"],
+            grades=data["grades_change"]
         )
 
-        event = PassiveEvent(
-            event_id=data["id"]
-            
-        )
+        event = PassiveEvent(data["id"], data["message"], new_effect)
+        events.append(event)
+
+    return events
