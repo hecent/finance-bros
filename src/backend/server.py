@@ -91,12 +91,13 @@ E.g:
 """
 
 option_effects = []
+dm = DecisionManager("decisions.json")
 
 def getNewLevel():
     global option_effects
-    dm = DecisionManager("decisions.json")
-    if random.random() > 0.9:
-        currentdecision = dm.pick_and_remove()
+    global dm
+    if True: #random()>0.9:
+        currentdecision = dm.pick() #dm.pick_and_remove() # uncomment to stop repeats
     else:
         response = client.models.generate_content(
             model="gemini-2.5-flash-lite",
@@ -113,9 +114,7 @@ def getNewLevel():
     newChoices = []
     newOptionEffects = []
     options = currentdecision.options
-    
-    # Starting count at 0 ensures choice_id aligns correctly with the option_effects array
-    count = 0 
+    count = 0
     for option in options:
         newChoices.append({
             "id": count,
@@ -143,6 +142,7 @@ def get_state():
 
 @app.route("/choose", methods=["POST"])
 def choose():
+    global option_effects
     data = request.get_json()
     print("data", data)
     choice_id = data["choice_id"]
@@ -151,8 +151,8 @@ def choose():
     print(choice_id, option_effects)
 
     effects = option_effects[choice_id]
-    game_state["grades"] += effects["gradesCh"]
-    game_state["happiness"] += effects["happinessCh"]
+    game_state["grades"] = max(0.0, min(20.0, game_state["grades"] + effects["gradesCh"]))
+    game_state["happiness"] = max(0.0, min(100.0, game_state["happiness"] + effects["happinessCh"]))
     game_state["balance"] += effects["balanceCh"]
     game_state["week"] += 1
 
@@ -170,14 +170,21 @@ def choose():
         random.shuffle(passive_events_list)
         for event in passive_events_list:
             if random.random() < event.probability:
-                game_state["passive_event_text"] = event.message
-                game_state["balance"] += event.effect.money
-                game_state["happiness"] += event.effect.happiness
-                game_state["grades"] += event.effect.grades
+                game_state["scenario"] = event.message
                 game_state["last_passive_week"] = game_state["week"]
+                game_state["choices"]=[{
+            "id": 0,
+            "text": "Ok"
+            }]
+                option_effects = [{
+            "id": 0,
+            "balanceCh": event.effect.money,
+            "gradesCh": event.effect.grades,
+            "happinessCh": event.effect.happiness
+        }]
                 break
-
-    getNewLevel()
+    else:
+        getNewLevel()
     toreturn = jsonify(game_state)
     return toreturn
 
