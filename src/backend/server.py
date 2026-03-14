@@ -157,6 +157,10 @@ def choose():
     game_state["balance"] += effects["balanceCh"]
     game_state["week"] += 1
 
+    if (game_state["week"] > 12):
+        print("AHHASDLF;HJASD;LFGHEWARFDPOAHFGPOSDZIHFGPAWSHDHWEPIOUHFPADHPASDHFSOLKFHAPEHRFPOW")
+
+
     # update game state here
     # dm = DecisionManager("decisions.json")
     # currentdecision = dm.pick_and_remove()

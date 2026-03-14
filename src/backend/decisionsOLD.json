@@ -1,0 +1,2145 @@
+{
+  "initial_decisions": [
+    {
+      "Question": ""
+    }
+  ],
+  "weekly_decisions": [
+    {
+      "question": "The library is closed, do you want to take a taxi to a cafe in town?",
+      "probability": 0.8,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Take the taxi",
+          "balance_change": -20.0,
+          "happiness_change": 4.0,
+          "grades_change": 0.3
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Stay Home",
+          "balance_change": 0.0,
+          "happiness_change": -2.0,
+          "grades_change": 0.1
+        }
+      ]
+    },
+    {
+      "question": "The fire alarm in Agnes Blackadder Hall goes off at 3 AM. What do you do?",
+      "probability": 0.5,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Evacuate immediately in your pajamas.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Stay in bed and risk it.",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Grab your laptop to study outside.",
+          "balance_change": 0.0,
+          "happiness_change": -8.0,
+          "grades_change": 0.5
+        }
+      ]
+    },
+    {
+      "question": "You have a major Computer Science project due tomorrow, but your code is throwing endless errors.",
+      "probability": 0.7,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Stay up all night debugging.",
+          "balance_change": -5.0,
+          "happiness_change": -10.0,
+          "grades_change": 1.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Submit what you have and go to sleep.",
+          "balance_change": 0.0,
+          "happiness_change": 8.0,
+          "grades_change": -1.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Pay a tutor for emergency help.",
+          "balance_change": -40.0,
+          "happiness_change": -2.0,
+          "grades_change": 1.0
+        }
+      ]
+    },
+    {
+      "question": "The Pokemon society is hosting a local tournament, but you have a Physics quiz the next morning.",
+      "probability": 0.4,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Skip the tournament, study for Physics.",
+          "balance_change": 0.0,
+          "happiness_change": -8.0,
+          "grades_change": 1.2
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Go to the tournament, wing the quiz.",
+          "balance_change": -5.0,
+          "happiness_change": 12.0,
+          "grades_change": -1.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Study for an hour, then go late.",
+          "balance_change": -5.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.4
+        }
+      ]
+    },
+    {
+      "question": "Your flatmate is trying to cook Beef Galawati Kababs, but they don't know what they're doing.",
+      "probability": 0.3,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Take over and cook for them.",
+          "balance_change": 0.0,
+          "happiness_change": 6.0,
+          "grades_change": -0.2
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Let them burn it, then order takeout together.",
+          "balance_change": -25.0,
+          "happiness_change": 8.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Hide in your room to study.",
+          "balance_change": 0.0,
+          "happiness_change": -3.0,
+          "grades_change": 0.5
+        }
+      ]
+    },
+    {
+      "question": "You started reading a new progression fantasy novel similar to Solo Leveling. It's 2 AM and you have class at 9 AM.",
+      "probability": 0.6,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Just one more chapter...",
+          "balance_change": 0.0,
+          "happiness_change": 10.0,
+          "grades_change": -0.8
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Force yourself to sleep.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.5
+        }
+      ]
+    },
+    {
+      "question": "The Doctor Who society is doing a massive marathon of the classic era this weekend.",
+      "probability": 0.3,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Attend the whole weekend marathon.",
+          "balance_change": -10.0,
+          "happiness_change": 15.0,
+          "grades_change": -1.2
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Just go for your favorite Doctor's episodes.",
+          "balance_change": -5.0,
+          "happiness_change": 8.0,
+          "grades_change": -0.4
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Stay home and work on your personal coding project.",
+          "balance_change": 0.0,
+          "happiness_change": 4.0,
+          "grades_change": 0.8
+        }
+      ]
+    },
+    {
+      "question": "You get invited to a weekend hiking trip in the highlands with the Breakaway society.",
+      "probability": 0.4,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Pay the trip fee and go.",
+          "balance_change": -60.0,
+          "happiness_change": 18.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Decline, it's too expensive.",
+          "balance_change": 0.0,
+          "happiness_change": -6.0,
+          "grades_change": 0.2
+        }
+      ]
+    },
+    {
+      "question": "Dice society is starting an epic RPG campaign that requires a 5-hour weekly commitment.",
+      "probability": 0.4,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Commit to the campaign.",
+          "balance_change": -10.0,
+          "happiness_change": 12.0,
+          "grades_change": -0.8
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Say you can only do occasional one-shots.",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": -0.2
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Decline to focus on studies.",
+          "balance_change": 0.0,
+          "happiness_change": -4.0,
+          "grades_change": 0.6
+        }
+      ]
+    },
+    {
+      "question": "Sabrina Carpenter is playing a concert nearby, but tickets are incredibly expensive.",
+      "probability": 0.2,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Buy the VIP tickets.",
+          "balance_change": -150.0,
+          "happiness_change": 25.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Settle for cheap nosebleed seats.",
+          "balance_change": -50.0,
+          "happiness_change": 10.0,
+          "grades_change": -0.2
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Skip it and listen on Spotify.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.3
+        }
+      ]
+    },
+    {
+      "question": "You're offered a part-time web development internship, but it takes 15 hours a week.",
+      "probability": 0.25,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Accept it for the cash and experience.",
+          "balance_change": 200.0,
+          "happiness_change": -8.0,
+          "grades_change": -1.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Reject it, university comes first.",
+          "balance_change": 0.0,
+          "happiness_change": 2.0,
+          "grades_change": 1.0
+        }
+      ]
+    },
+    {
+      "question": "The university Wi-Fi goes down for the entire evening during midterm season.",
+      "probability": 0.5,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Use your mobile hotspot data.",
+          "balance_change": -15.0,
+          "happiness_change": -2.0,
+          "grades_change": 0.8
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Give up and read a physical book.",
+          "balance_change": 0.0,
+          "happiness_change": 6.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Trek to a local pub with Wi-Fi.",
+          "balance_change": -20.0,
+          "happiness_change": 4.0,
+          "grades_change": 0.4
+        }
+      ]
+    },
+    {
+      "question": "You find a glowing rock on your way to class. It hums faintly.",
+      "probability": 0.02,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Sell it on eBay.",
+          "balance_change": 500.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Keep it as a desk ornament. It makes you feel smart.",
+          "balance_change": 0.0,
+          "happiness_change": 15.0,
+          "grades_change": 1.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Throw it in the river. Too spooky.",
+          "balance_change": 0.0,
+          "happiness_change": -2.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "Your professor accidentally uploads the answers to tomorrow's exam instead of the study guide.",
+      "probability": 0.05,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Memorize them all.",
+          "balance_change": 0.0,
+          "happiness_change": -10.0,
+          "grades_change": 2.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Email the professor to let them know.",
+          "balance_change": 0.0,
+          "happiness_change": 10.0,
+          "grades_change": 0.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Sell the answers to your coursemates.",
+          "balance_change": 150.0,
+          "happiness_change": -15.0,
+          "grades_change": 1.5
+        }
+      ]
+    },
+    {
+      "question": "You catch freshers' flu.",
+      "probability": 0.6,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Rest and drink fluids all weekend.",
+          "balance_change": -10.0,
+          "happiness_change": -5.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Power through and go to class.",
+          "balance_change": 0.0,
+          "happiness_change": -15.0,
+          "grades_change": 0.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Buy expensive vitamins and herbal remedies.",
+          "balance_change": -40.0,
+          "happiness_change": 2.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "A massive storm hits and all lectures are moved online for the week.",
+      "probability": 0.4,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Attend all lectures from bed.",
+          "balance_change": 0.0,
+          "happiness_change": 10.0,
+          "grades_change": 0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Treat it like a holiday and play video games.",
+          "balance_change": 0.0,
+          "happiness_change": 15.0,
+          "grades_change": -1.0
+        }
+      ]
+    },
+    {
+      "question": "You realize you've been doing the laundry wrong all year and all your clothes have shrunk.",
+      "probability": 0.15,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Buy a whole new wardrobe.",
+          "balance_change": -200.0,
+          "happiness_change": 10.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Squeeze into them. It's a fashion statement.",
+          "balance_change": 0.0,
+          "happiness_change": -10.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "A recruiter from a top tech firm messages you on LinkedIn.",
+      "probability": 0.2,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Spend hours perfecting your resume and replying.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Send a quick, casual reply.",
+          "balance_change": 0.0,
+          "happiness_change": 2.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Ignore it, you have exams.",
+          "balance_change": 0.0,
+          "happiness_change": 0.0,
+          "grades_change": 0.8
+        }
+      ]
+    },
+    {
+      "question": "You accidentally join a cult that meets in the Student Union building.",
+      "probability": 0.03,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Leave immediately.",
+          "balance_change": 0.0,
+          "happiness_change": 2.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Stay for the free pizza.",
+          "balance_change": 15.0,
+          "happiness_change": 5.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Become their new leader.",
+          "balance_change": 100.0,
+          "happiness_change": 20.0,
+          "grades_change": -2.0
+        }
+      ]
+    },
+    {
+      "question": "You are drafted into World War 3.",
+      "probability": 0.01,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Flee the country.",
+          "balance_change": -1000.0,
+          "happiness_change": -50.0,
+          "grades_change": -20.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Report for duty as a cyber-warfare specialist.",
+          "balance_change": 500.0,
+          "happiness_change": -20.0,
+          "grades_change": -5.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Claim you are a conscientious objector.",
+          "balance_change": 0.0,
+          "happiness_change": -10.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "The dining hall is serving mystery meat.",
+      "probability": 0.5,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Eat it anyway.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Order a pizza instead.",
+          "balance_change": -20.0,
+          "happiness_change": 10.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Cook instant noodles in your dorm.",
+          "balance_change": -2.0,
+          "happiness_change": 2.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "A stray cat wanders into your lecture hall and sits on your lap.",
+      "probability": 0.1,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Pet it for the rest of the lecture.",
+          "balance_change": 0.0,
+          "happiness_change": 15.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Shoo it away so you can take notes.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Smuggle it back to your dorm.",
+          "balance_change": -30.0,
+          "happiness_change": 25.0,
+          "grades_change": -1.0
+        }
+      ]
+    },
+    {
+      "question": "Your laptop battery dies completely and you need a replacement.",
+      "probability": 0.2,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Buy a brand new, high-end laptop.",
+          "balance_change": -800.0,
+          "happiness_change": 15.0,
+          "grades_change": 0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Buy a cheap, refurbished one.",
+          "balance_change": -250.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Use the library computers for the rest of the semester.",
+          "balance_change": 0.0,
+          "happiness_change": -15.0,
+          "grades_change": -0.5
+        }
+      ]
+    },
+    {
+      "question": "You realize you forgot about an essay due in 3 hours.",
+      "probability": 0.4,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Chug an energy drink and speed-write it.",
+          "balance_change": -5.0,
+          "happiness_change": -10.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Ask the professor for an extension.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": -0.2
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Accept the late penalty and write it tomorrow.",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": -1.0
+        }
+      ]
+    },
+    {
+      "question": "A new bubble tea shop opens near campus with a buy-one-get-one-free offer.",
+      "probability": 0.6,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Go every day this week.",
+          "balance_change": -35.0,
+          "happiness_change": 15.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Just go once with a friend.",
+          "balance_change": -5.0,
+          "happiness_change": 8.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Skip it, too much sugar.",
+          "balance_change": 0.0,
+          "happiness_change": -2.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You get a jury duty summons.",
+      "probability": 0.08,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Claim student exemption.",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Serve on the jury. It sounds fun.",
+          "balance_change": 30.0,
+          "happiness_change": 10.0,
+          "grades_change": -1.5
+        }
+      ]
+    },
+    {
+      "question": "You find a wallet on the street with £100 inside.",
+      "probability": 0.1,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Keep the cash, toss the wallet.",
+          "balance_change": 100.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Turn it into the police station.",
+          "balance_change": 0.0,
+          "happiness_change": 15.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Track down the owner yourself.",
+          "balance_change": -5.0,
+          "happiness_change": 20.0,
+          "grades_change": -0.2
+        }
+      ]
+    },
+    {
+      "question": "The university gym is offering a huge discount on yearly memberships.",
+      "probability": 0.3,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Buy it and go every day.",
+          "balance_change": -120.0,
+          "happiness_change": 20.0,
+          "grades_change": 0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Buy it, but never go.",
+          "balance_change": -120.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Skip the gym, do home workouts.",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "A celebrity is filming a movie on campus and they need extras.",
+      "probability": 0.05,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Skip class to be an extra.",
+          "balance_change": 50.0,
+          "happiness_change": 25.0,
+          "grades_change": -1.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Ignore it and go to class.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.5
+        }
+      ]
+    },
+    {
+      "question": "Your textbook for a module costs £150.",
+      "probability": 0.5,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Buy it new from the bookstore.",
+          "balance_change": -150.0,
+          "happiness_change": 0.0,
+          "grades_change": 0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Find a sketchy PDF online.",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.3
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Share a copy with a friend.",
+          "balance_change": -75.0,
+          "happiness_change": 8.0,
+          "grades_change": 0.4
+        }
+      ]
+    },
+    {
+      "question": "Aliens abduct you for 24 hours to study a 'typical university student'.",
+      "probability": 0.01,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Teach them how to play beer pong.",
+          "balance_change": 0.0,
+          "happiness_change": 30.0,
+          "grades_change": -1.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Beg them to do your assignments.",
+          "balance_change": 0.0,
+          "happiness_change": 10.0,
+          "grades_change": 3.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Steal an alien artifact to sell.",
+          "balance_change": 5000.0,
+          "happiness_change": 0.0,
+          "grades_change": -2.0
+        }
+      ]
+    },
+    {
+      "question": "Your parents make a surprise visit to see how you're doing.",
+      "probability": 0.15,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Take them out for a nice dinner.",
+          "balance_change": -60.0,
+          "happiness_change": 20.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Let them buy you groceries.",
+          "balance_change": 100.0,
+          "happiness_change": 15.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Hide because your room is a mess.",
+          "balance_change": 0.0,
+          "happiness_change": -15.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "A massive snowstorm cancels all transport, and you are stuck in the library overnight.",
+      "probability": 0.05,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Study all night.",
+          "balance_change": 0.0,
+          "happiness_change": -10.0,
+          "grades_change": 1.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Build a fort out of law textbooks.",
+          "balance_change": 0.0,
+          "happiness_change": 20.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Sleep under a desk.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You get a cold sore right before a big presentation.",
+      "probability": 0.2,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Buy expensive cream.",
+          "balance_change": -15.0,
+          "happiness_change": -2.0,
+          "grades_change": 0.2
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Wear a mask and pretend you're sick.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "A friend invites you to invest in a new cryptocurrency.",
+      "probability": 0.3,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Invest your savings.",
+          "balance_change": -200.0,
+          "happiness_change": -10.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Invest a little bit.",
+          "balance_change": -20.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Tell them it's a scam.",
+          "balance_change": 0.0,
+          "happiness_change": 0.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "Your flatmate leaves dirty dishes in the sink for the 5th day in a row.",
+      "probability": 0.6,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Wash them aggressively.",
+          "balance_change": 0.0,
+          "happiness_change": -10.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Leave a passive-aggressive sticky note.",
+          "balance_change": 0.0,
+          "happiness_change": -2.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Put the dishes in their bed.",
+          "balance_change": 0.0,
+          "happiness_change": 15.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You are offered a trial for a new memory-enhancing drug by the psych department.",
+      "probability": 0.04,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Take it for the money.",
+          "balance_change": 150.0,
+          "happiness_change": -15.0,
+          "grades_change": 2.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Decline, sounds dangerous.",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You get a 20% discount code for a food delivery app.",
+      "probability": 0.5,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Order a massive feast.",
+          "balance_change": -30.0,
+          "happiness_change": 15.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Ignore it and cook at home.",
+          "balance_change": 0.0,
+          "happiness_change": -2.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "A massive protest happens on campus blocking your route to an exam.",
+      "probability": 0.1,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Join the protest.",
+          "balance_change": 0.0,
+          "happiness_change": 20.0,
+          "grades_change": -2.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Push your way through to the exam.",
+          "balance_change": 0.0,
+          "happiness_change": -10.0,
+          "grades_change": 1.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Go back to sleep.",
+          "balance_change": 0.0,
+          "happiness_change": 10.0,
+          "grades_change": -1.5
+        }
+      ]
+    },
+    {
+      "question": "You discover a glitch in the university vending machine that gives free snacks.",
+      "probability": 0.15,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Exploit it daily.",
+          "balance_change": 20.0,
+          "happiness_change": 15.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Tell your friends.",
+          "balance_change": 5.0,
+          "happiness_change": 25.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Report it to administration.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.2
+        }
+      ]
+    },
+    {
+      "question": "Your favorite music artist drops a surprise album at midnight.",
+      "probability": 0.4,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Stay up listening to the whole thing.",
+          "balance_change": 0.0,
+          "happiness_change": 20.0,
+          "grades_change": -0.8
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Go to sleep and listen tomorrow.",
+          "balance_change": 0.0,
+          "happiness_change": -2.0,
+          "grades_change": 0.5
+        }
+      ]
+    },
+    {
+      "question": "The university announces a zombie outbreak simulation game across campus.",
+      "probability": 0.08,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Sign up and try to survive.",
+          "balance_change": -10.0,
+          "happiness_change": 25.0,
+          "grades_change": -1.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Play as a zombie and infect people.",
+          "balance_change": -5.0,
+          "happiness_change": 20.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Ignore it and go to the library.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 1.2
+        }
+      ]
+    },
+    {
+      "question": "You accidentally send an embarrassing text to your professor instead of your friend.",
+      "probability": 0.2,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Send an immediate, panicked apology.",
+          "balance_change": 0.0,
+          "happiness_change": -15.0,
+          "grades_change": -0.2
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Drop the class.",
+          "balance_change": 0.0,
+          "happiness_change": -25.0,
+          "grades_change": -2.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Pretend your phone was hacked.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": -0.5
+        }
+      ]
+    },
+    {
+      "question": "Elon Musk buys your university.",
+      "probability": 0.01,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Apply for a SpaceX internship.",
+          "balance_change": 0.0,
+          "happiness_change": 10.0,
+          "grades_change": 1.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Pay your tuition in Dogecoin.",
+          "balance_change": -500.0,
+          "happiness_change": -20.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Complain on X (formerly Twitter).",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You win a year's supply of instant noodles.",
+      "probability": 0.03,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Eat them for every meal.",
+          "balance_change": 200.0,
+          "happiness_change": -10.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Sell them on campus.",
+          "balance_change": 150.0,
+          "happiness_change": 5.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Donate them to a food bank.",
+          "balance_change": 0.0,
+          "happiness_change": 20.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "A pipe bursts in your dorm and floods the hallway.",
+      "probability": 0.1,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Help clean it up.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Flee to a friend's place for the weekend.",
+          "balance_change": -20.0,
+          "happiness_change": 10.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Complain to the landlord for compensation.",
+          "balance_change": 50.0,
+          "happiness_change": -10.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "Your crush asks you to 'study' together.",
+      "probability": 0.25,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Actually just study.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 1.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Flirt the whole time.",
+          "balance_change": -15.0,
+          "happiness_change": 25.0,
+          "grades_change": -1.0
+        }
+      ]
+    },
+    {
+      "question": "The local pub is hosting a trivia night with a big cash prize.",
+      "probability": 0.4,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Assemble a genius team and compete.",
+          "balance_change": 40.0,
+          "happiness_change": 15.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Go just for drinks.",
+          "balance_change": -30.0,
+          "happiness_change": 10.0,
+          "grades_change": -0.2
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Stay in and study.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.8
+        }
+      ]
+    },
+    {
+      "question": "You discover a hidden underground tunnel connecting the library to a coffee shop.",
+      "probability": 0.02,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Use it secretly every day.",
+          "balance_change": -20.0,
+          "happiness_change": 20.0,
+          "grades_change": 0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Show it to everyone.",
+          "balance_change": 0.0,
+          "happiness_change": 10.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Never go down there again.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You realize you haven't eaten a vegetable in a week.",
+      "probability": 0.5,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Buy a salad.",
+          "balance_change": -8.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Buy a multivitamin.",
+          "balance_change": -12.0,
+          "happiness_change": 2.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Ketchup counts as a vegetable.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "A chaotic bird flies into your dorm room and won't leave.",
+      "probability": 0.07,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Chase it with a broom.",
+          "balance_change": -10.0,
+          "happiness_change": -15.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Lure it out with bread.",
+          "balance_change": -2.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Accept your new roommate.",
+          "balance_change": 0.0,
+          "happiness_change": 15.0,
+          "grades_change": -0.5
+        }
+      ]
+    },
+    {
+      "question": "You get a sudden urge to reinvent yourself.",
+      "probability": 0.3,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Dye your hair a crazy color.",
+          "balance_change": -30.0,
+          "happiness_change": 20.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Start waking up at 5 AM.",
+          "balance_change": 0.0,
+          "happiness_change": -10.0,
+          "grades_change": 1.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Buy a new wardrobe.",
+          "balance_change": -150.0,
+          "happiness_change": 15.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "Your bank account dips below £10.",
+      "probability": 0.4,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Ask parents for money.",
+          "balance_change": 100.0,
+          "happiness_change": -10.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Survive on rice and beans.",
+          "balance_change": -5.0,
+          "happiness_change": -15.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Get an emergency weekend job.",
+          "balance_change": 80.0,
+          "happiness_change": -20.0,
+          "grades_change": -1.0
+        }
+      ]
+    },
+    {
+      "question": "The university is hosting a 'Puppy Therapy' day.",
+      "probability": 0.25,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Spend an hour petting dogs.",
+          "balance_change": 0.0,
+          "happiness_change": 30.0,
+          "grades_change": -0.2
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Skip it, you're allergic.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.5
+        }
+      ]
+    },
+    {
+      "question": "You accidentally plagiarize yourself from a high school paper.",
+      "probability": 0.1,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Rewrite it from scratch.",
+          "balance_change": 0.0,
+          "happiness_change": -15.0,
+          "grades_change": 1.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Submit it and pray.",
+          "balance_change": 0.0,
+          "happiness_change": 10.0,
+          "grades_change": -2.0
+        }
+      ]
+    },
+    {
+      "question": "Your flat decides to host a massive house party.",
+      "probability": 0.4,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Join in and buy drinks.",
+          "balance_change": -40.0,
+          "happiness_change": 25.0,
+          "grades_change": -1.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Hide in your room with noise-cancelling headphones.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Act as the bouncer and charge entry.",
+          "balance_change": 60.0,
+          "happiness_change": 10.0,
+          "grades_change": -0.5
+        }
+      ]
+    },
+    {
+      "question": "You find a USB drive labeled 'Exam Answers 2026'.",
+      "probability": 0.05,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Plug it in.",
+          "balance_change": -200.0,
+          "happiness_change": -50.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Throw it in the trash.",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You sign up for a 9 AM class on a Friday.",
+      "probability": 0.6,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Actually attend it.",
+          "balance_change": 0.0,
+          "happiness_change": -10.0,
+          "grades_change": 1.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Sleep through it.",
+          "balance_change": 0.0,
+          "happiness_change": 15.0,
+          "grades_change": -1.0
+        }
+      ]
+    },
+    {
+      "question": "A massive spider is blocking the door to the bathroom.",
+      "probability": 0.2,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Catch it and put it outside.",
+          "balance_change": 0.0,
+          "happiness_change": 10.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Smash it.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Never shower again.",
+          "balance_change": 0.0,
+          "happiness_change": -15.0,
+          "grades_change": -0.5
+        }
+      ]
+    },
+    {
+      "question": "You receive a phishing email offering a £10,000 scholarship.",
+      "probability": 0.15,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Click the link and fill out the form.",
+          "balance_change": -500.0,
+          "happiness_change": -30.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Report it to IT.",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "The university opens a new rock-climbing wall.",
+      "probability": 0.3,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Try it out with friends.",
+          "balance_change": -15.0,
+          "happiness_change": 20.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Ignore it.",
+          "balance_change": 0.0,
+          "happiness_change": 0.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You start a TikTok account reviewing university food.",
+      "probability": 0.1,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "It goes viral.",
+          "balance_change": 100.0,
+          "happiness_change": 30.0,
+          "grades_change": -1.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "You get 3 views.",
+          "balance_change": -20.0,
+          "happiness_change": -10.0,
+          "grades_change": -0.5
+        }
+      ]
+    },
+    {
+      "question": "Your alarm doesn't go off on the day of a major presentation.",
+      "probability": 0.15,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Sprint to class in whatever you're wearing.",
+          "balance_change": 0.0,
+          "happiness_change": -15.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Email a fake doctor's note.",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": -1.0
+        }
+      ]
+    },
+    {
+      "question": "A time traveler appears and tells you to drop out to save the future.",
+      "probability": 0.01,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Drop out immediately.",
+          "balance_change": 0.0,
+          "happiness_change": 50.0,
+          "grades_change": -20.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Tell them to shut up, you have debt.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You are assigned a group project where no one else speaks English.",
+      "probability": 0.05,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Use Google Translate for everything.",
+          "balance_change": 0.0,
+          "happiness_change": -10.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Do all the work yourself.",
+          "balance_change": 0.0,
+          "happiness_change": -25.0,
+          "grades_change": 1.5
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Complain to the professor.",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.5
+        }
+      ]
+    },
+    {
+      "question": "Your favorite cafe introduces a 'pay it forward' board.",
+      "probability": 0.3,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Buy a coffee for a stranger.",
+          "balance_change": -5.0,
+          "happiness_change": 15.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Take a free coffee.",
+          "balance_change": 5.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Ignore it.",
+          "balance_change": 0.0,
+          "happiness_change": 0.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You lose your student ID card right before an exam.",
+      "probability": 0.1,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Pay for a replacement immediately.",
+          "balance_change": -20.0,
+          "happiness_change": -10.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Beg the invigilator to let you in.",
+          "balance_change": 0.0,
+          "happiness_change": -20.0,
+          "grades_change": -1.0
+        }
+      ]
+    },
+    {
+      "question": "You accidentally join a pyramid scheme.",
+      "probability": 0.04,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Try to recruit your friends.",
+          "balance_change": -100.0,
+          "happiness_change": -20.0,
+          "grades_change": -1.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Cut your losses and quit.",
+          "balance_change": -50.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You find a rare, first-edition book in the university library.",
+      "probability": 0.02,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Steal it and sell it.",
+          "balance_change": 2000.0,
+          "happiness_change": -20.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Report the find to the librarian.",
+          "balance_change": 0.0,
+          "happiness_change": 15.0,
+          "grades_change": 0.5
+        }
+      ]
+    },
+    {
+      "question": "Your phone screen shatters completely.",
+      "probability": 0.2,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Pay to get it fixed.",
+          "balance_change": -150.0,
+          "happiness_change": -10.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Use it shattered and cut your fingers.",
+          "balance_change": 0.0,
+          "happiness_change": -25.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "A massive stray dog follows you to your dorm.",
+      "probability": 0.08,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Adopt it secretly.",
+          "balance_change": -50.0,
+          "happiness_change": 40.0,
+          "grades_change": -1.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Call animal control.",
+          "balance_change": 0.0,
+          "happiness_change": -10.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You win £500 on a scratch card.",
+      "probability": 0.05,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Save it for tuition.",
+          "balance_change": 500.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Throw a massive party.",
+          "balance_change": 0.0,
+          "happiness_change": 40.0,
+          "grades_change": -2.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Buy more scratch cards.",
+          "balance_change": -100.0,
+          "happiness_change": -15.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You are invited to a mysterious underground fight club.",
+      "probability": 0.02,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Fight.",
+          "balance_change": 100.0,
+          "happiness_change": -20.0,
+          "grades_change": -1.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Just watch and bet.",
+          "balance_change": -50.0,
+          "happiness_change": 15.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Decline.",
+          "balance_change": 0.0,
+          "happiness_change": 0.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "Your dorm room gets infested with ants.",
+      "probability": 0.2,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Buy bug spray and wage war.",
+          "balance_change": -10.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Ignore them.",
+          "balance_change": 0.0,
+          "happiness_change": -20.0,
+          "grades_change": -0.5
+        }
+      ]
+    },
+    {
+      "question": "You get a free trial for a premium study AI.",
+      "probability": 0.4,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Use it to write all your essays.",
+          "balance_change": 0.0,
+          "happiness_change": 15.0,
+          "grades_change": 1.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Forget to cancel the trial.",
+          "balance_change": -40.0,
+          "happiness_change": -10.0,
+          "grades_change": 0.5
+        }
+      ]
+    },
+    {
+      "question": "A flash mob erupts in the middle of your lecture.",
+      "probability": 0.05,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Join in.",
+          "balance_change": 0.0,
+          "happiness_change": 25.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Record it for TikTok.",
+          "balance_change": 0.0,
+          "happiness_change": 10.0,
+          "grades_change": -0.2
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Get annoyed and leave.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You accidentally shrink your favorite sweater.",
+      "probability": 0.2,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Give it to a teddy bear.",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Buy a new one.",
+          "balance_change": -50.0,
+          "happiness_change": 10.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "A wealthy alum offers to pay off your tuition if you can beat them in chess.",
+      "probability": 0.01,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Accept the challenge and win.",
+          "balance_change": 5000.0,
+          "happiness_change": 50.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Accept the challenge and lose.",
+          "balance_change": -100.0,
+          "happiness_change": -20.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 3,
+          "option_text": "Refuse, it's too much pressure.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You get locked out of your dorm in a towel.",
+      "probability": 0.1,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Walk to the reception desk.",
+          "balance_change": 0.0,
+          "happiness_change": -30.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Wait for a flatmate.",
+          "balance_change": 0.0,
+          "happiness_change": -15.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "The university coffee shop runs out of coffee beans.",
+      "probability": 0.15,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Drink tea instead.",
+          "balance_change": -3.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Have a breakdown and sleep all day.",
+          "balance_change": 0.0,
+          "happiness_change": -10.0,
+          "grades_change": -1.0
+        }
+      ]
+    },
+    {
+      "question": "You discover a hidden talent for stand-up comedy.",
+      "probability": 0.05,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Perform at open mic night.",
+          "balance_change": 0.0,
+          "happiness_change": 30.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Keep it to yourself.",
+          "balance_change": 0.0,
+          "happiness_change": 0.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You accidentally buy an expensive subscription to an online magazine.",
+      "probability": 0.2,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Read it to justify the cost.",
+          "balance_change": -60.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Cancel it immediately.",
+          "balance_change": -10.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You find out your favorite professor is a secret agent.",
+      "probability": 0.01,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Blackmail them for an A.",
+          "balance_change": 0.0,
+          "happiness_change": 10.0,
+          "grades_change": 2.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Ask to join their agency.",
+          "balance_change": 0.0,
+          "happiness_change": 20.0,
+          "grades_change": -1.5
+        }
+      ]
+    },
+    {
+      "question": "Your roommate adopts a snake without telling you.",
+      "probability": 0.08,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Demand they get rid of it.",
+          "balance_change": 0.0,
+          "happiness_change": -10.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Learn to love the snake.",
+          "balance_change": 0.0,
+          "happiness_change": 15.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "A massive power outage hits the whole town.",
+      "probability": 0.1,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Host a candlelit ghost story night.",
+          "balance_change": -5.0,
+          "happiness_change": 25.0,
+          "grades_change": -0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Go to sleep early.",
+          "balance_change": 0.0,
+          "happiness_change": 10.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You get a mysterious letter with no return address containing £50.",
+      "probability": 0.05,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Spend it on groceries.",
+          "balance_change": 50.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Burn it, it's cursed.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "You accidentally sign up for a marathon.",
+      "probability": 0.03,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Train for it and run.",
+          "balance_change": -30.0,
+          "happiness_change": 30.0,
+          "grades_change": -1.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Don't show up.",
+          "balance_change": -30.0,
+          "happiness_change": -5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "A Hollywood director wants to film a scene in your dorm room.",
+      "probability": 0.02,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Charge them rent.",
+          "balance_change": 500.0,
+          "happiness_change": 20.0,
+          "grades_change": -1.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Refuse, you need to study.",
+          "balance_change": 0.0,
+          "happiness_change": -5.0,
+          "grades_change": 1.0
+        }
+      ]
+    },
+    {
+      "question": "You find a perfectly good couch on the sidewalk.",
+      "probability": 0.1,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Carry it to your dorm.",
+          "balance_change": 0.0,
+          "happiness_change": 15.0,
+          "grades_change": 0.0
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Leave it, it probably has bed bugs.",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": 0.0
+        }
+      ]
+    },
+    {
+      "question": "The university website crashes right when course registration opens.",
+      "probability": 0.5,
+      "options": [
+        {
+          "choice_id": 1,
+          "option_text": "Refresh the page for 3 hours.",
+          "balance_change": 0.0,
+          "happiness_change": -20.0,
+          "grades_change": 0.5
+        },
+        {
+          "choice_id": 2,
+          "option_text": "Give up and take whatever classes are left.",
+          "balance_change": 0.0,
+          "happiness_change": 5.0,
+          "grades_change": -1.0
+        }
+      ]
+    }
+  ]
+}
