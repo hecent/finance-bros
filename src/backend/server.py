@@ -4,13 +4,13 @@ from google import genai
 from pydantic import BaseModel, Field
 from typing import List, Optional
 from dotenv import load_dotenv
-import os
-from random import random
+import random
 
 load_dotenv()
 API_KEY = os.getenv("geminiKEY")
 
 from JsonLoader.decisionLoader import DecisionManager
+from JsonLoader.passiveEventLoader import load_passive_events
 
 # Get absolute path to frontend directory
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,24 +26,21 @@ app = Flask(
 def home():
     return render_template("index.html")
 
+# Load passive events once at startup
+passive_events_list = load_passive_events("passive_events.json")
 
 # Simple in-memory game state
 game_state = {
     "year": 1,
     "week": 1,
     "scenario": "",
+    "passive_event_text": "",
+    "last_passive_week": -3, # Ensures an event can trigger from week 1
     "balance": 1000,
     "happiness": 50,
     "grades": 12,
-    "choices": [
-        # {"id": 1, "text": "Stay home and finish the assignment"},
-        # {"id": 2, "text": "Go out with friends"}
-    ]
+    "choices": []
 }
-
-
-
-
 
 class Effect(BaseModel):
     money: float = Field(description="How the option will affect the balance (+/- number in pounds)")
@@ -130,9 +127,8 @@ def getNewLevel():
         })
         count += 1
 
-
-        game_state["choices"] = newChoices
-        option_effects = newOptionEffects
+    game_state["choices"] = newChoices
+    option_effects = newOptionEffects
 
 
 @app.route("/state")
@@ -150,7 +146,6 @@ def choose():
     choice_id = data["choice_id"]
 
     print("User chose:", choice_id)
-
     print(choice_id, option_effects)
 
     effects = option_effects[choice_id]
@@ -162,47 +157,24 @@ def choose():
     if (game_state["week"] > 12):
         print("AHHASDLF;HJASD;LFGHEWARFDPOAHFGPOSDZIHFGPAWSHDHWEPIOUHFPADHPASDHFSOLKFHAPEHRFPOW")
 
+    # --- PASSIVE EVENT LOGIC ---
+    game_state["passive_event_text"] = ""
+    # Check if at least 4 weeks have passed since the last event
+    if game_state["week"] - game_state.get("last_passive_week", -3) >= 4:
+        # Shuffle to pick a random candidate
+        random.shuffle(passive_events_list)
+        for event in passive_events_list:
+            if random.random() < event.probability:
+                game_state["passive_event_text"] = event.message
+                game_state["balance"] += event.effect.money
+                game_state["happiness"] += event.effect.happiness
+                game_state["grades"] += event.effect.grades
+                game_state["last_passive_week"] = game_state["week"]
+                break
 
-    # update game state here
-    # dm = DecisionManager("decisions.json")
-    # currentdecision = dm.pick_and_remove()
-    # print(currentdecision.description)
-    # options = currentdecision.options # Option {str text, Effect effect}
-    # for option in options:
-    #     print(option.text)
-
-    # if choice_id == 1:
-    #     game_state["grades"] += 5
-    #     game_state["happiness"] -= 5
-    #     game_state["scenario"] = "You finished your assignment and feel relieved."
-    # elif choice_id == 2:
-    #     game_state["balance"] -= 20
-    #     game_state["happiness"] += 10
-    #     game_state["grades"] -= 5
-    #     game_state["scenario"] = "You had fun but your assignment suffered."
-
-
-    # after changing the stats
-    # game_state["scenario"] = currentdecision.description
-    # newChoices = []
-    # options = currentdecision.options
-    # count = 1
-    # for option in options:
-    #     newChoices.append({
-    #         "id": count,
-    #         "text": option.text
-    #         })
-    #     count += 1
-
-    # game_state["choices"] = newChoices
-
-    # print(game_state)
     getNewLevel()
     toreturn = jsonify(game_state)
     return toreturn
-
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
