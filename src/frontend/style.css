@@ -101,3 +101,28 @@ h1, h2 {
     color: #333;
     font-weight: bold;
 }
+
+.first {
+    color: #209c05;
+    font-weight: bold;
+}
+
+.two-one {
+    color: #85e62c;
+    font-weight: bold;
+}
+
+.two-two {
+    color: #ebff0a;
+    font-weight: bold;
+}
+
+.third {
+    color: #f2ce02;
+    font-weight: bold;
+}
+
+.fail {
+    color: #ff0a0a;
+    font-weight: bold;
+}

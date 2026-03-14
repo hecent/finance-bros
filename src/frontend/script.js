@@ -26,6 +26,26 @@ function setBalance(value) {
     }
 }
 
+function setGrade(value) {
+    const el = document.getElementById("grades");
+    el.textContent = value;
+
+    el.classList.remove("first", "two-one", "two-two", "third", "fail");
+
+    if (value >= 16.5) {
+        el.classList.add("first");
+    } else if (value >= 13.5) {
+        el.classList.add("two-one");
+    } else if (value >= 10.5){
+        el.classList.add("two-two");
+    }else if (value >= 7){
+        el.classList.add("third");
+    }
+    else {
+        el.classList.add("fail");
+    }
+}
+
 function renderState(state) {
 
 
@@ -35,7 +55,7 @@ function renderState(state) {
 
     setBalance(state.balance);// document.getElementById("balance").textContent = `£${state.balance}`;
     document.getElementById("happiness").textContent = state.happiness;
-    document.getElementById("grades").textContent = state.grades;
+    setGrade(state.grades);
 
     const choicesDiv = document.getElementById("choices");
     choicesDiv.innerHTML = "";
