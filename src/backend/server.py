@@ -39,7 +39,8 @@ game_state = {
     "balance": 1000,
     "happiness": 50,
     "grades": 12,
-    "choices": []
+    "choices": [],
+    "game_over": False
 }
 
 class Effect(BaseModel):
@@ -155,8 +156,11 @@ def choose():
     game_state["balance"] += effects["balanceCh"]
     game_state["week"] += 1
 
-    if (game_state["week"] > 12):
-        print("AHHASDLF;HJASD;LFGHEWARFDPOAHFGPOSDZIHFGPAWSHDHWEPIOUHFPADHPASDHFSOLKFHAPEHRFPOW")
+
+    #Game Over Check
+    if game_state["week"] > 12:
+        game_state["game_over"] = True
+        return jsonify(game_state)
 
     # --- PASSIVE EVENT LOGIC ---
     game_state["passive_event_text"] = ""

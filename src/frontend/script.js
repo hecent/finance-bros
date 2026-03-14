@@ -54,6 +54,10 @@ function renderState(state) {
     document.getElementById("year").textContent = `Year: ${state.year}`;
     document.getElementById("week").textContent = `Week: ${state.week}`;
     document.getElementById("scenario-text").textContent = state.scenario;
+    if (state.game_over === true) {
+        let score = (state.happiness + state.balance + state.grades) / 100
+        alert(`Game over. Score: ${score}`);
+    }
 
     setBalance(state.balance);
     document.getElementById("happiness").textContent = state.happiness.toFixed(1);
