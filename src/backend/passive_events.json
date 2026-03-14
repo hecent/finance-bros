@@ -1,0 +1,160 @@
+{
+  "event_pool": [
+    {
+        "id": "You drank out of date milk and got food poisoning",
+        "happiness_change": 15.0
+    },
+    {
+      "id": "tax_rebate",
+      "message": "You received an unexpected tax rebate from your summer job!",
+      "money_change": 120.0,
+      "happiness_change": 15.0
+    },
+    {
+      "id": "parking_fine",
+      "message": "You parked 'just for a second' in a restricted zone. The council was faster.",
+      "money_change": -60.0,
+      "happiness_change": -10.0
+    },
+    {
+      "id": "found_fiver",
+      "message": "You found a £5 note in the pocket of your winter coat!",
+      "money_change": 5.0,
+      "happiness_change": 5.0
+    },
+    {
+      "id": "textbook_buyback",
+      "message": "The library bought back your old textbooks at a surprisingly good price.",
+      "money_change": 45.0,
+      "happiness_change": 8.0
+    },
+    {
+      "id": "dentist_bill",
+      "message": "A sudden toothache required an emergency trip to the dentist.",
+      "money_change": -85.0,
+      "happiness_change": -15.0
+    },
+    {
+      "id": "birthday_money",
+      "message": "Your grandmother sent you a card with some birthday cash.",
+      "money_change": 50.0,
+      "happiness_change": 20.0
+    },
+    {
+      "id": "broken_phone",
+      "message": "You dropped your phone and the screen is a spiderweb of glass.",
+      "money_change": -150.0,
+      "happiness_change": -25.0
+    },
+    {
+      "id": "utility_refund",
+      "message": "Your energy provider overcharged you and finally sent a refund.",
+      "money_change": 75.0,
+      "happiness_change": 12.0
+    },
+    {
+      "id": "lost_wallet",
+      "message": "You can't find your wallet. You had to pay for all new IDs and cards.",
+      "money_change": -40.0,
+      "happiness_change": -30.0
+    },
+    {
+      "id": "extra_shift",
+      "message": "You covered a shift for a colleague and got a nice bonus.",
+      "money_change": 90.0,
+      "happiness_change": -5.0
+    },
+    {
+      "id": "coffee_addiction",
+      "message": "You realized you spent way too much on lattes this month. Budget hit!",
+      "money_change": -35.0,
+      "happiness_change": 5.0
+    },
+    {
+      "id": "spotify_hike",
+      "message": "Subscription prices went up. Your bank account felt that tiny sting.",
+      "money_change": -5.0,
+      "happiness_change": -2.0
+    },
+    {
+      "id": "sell_clothes",
+      "message": "You sold some old clothes on Vinted. Clean room, full wallet.",
+      "money_change": 30.0,
+      "happiness_change": 10.0
+    },
+    {
+      "id": "gym_membership",
+      "message": "You forgot to cancel that trial gym membership. Automatic renewal!",
+      "money_change": -45.0,
+      "happiness_change": -10.0
+    },
+    {
+      "id": "research_study",
+      "message": "You participated in a psychology department study for quick cash.",
+      "money_change": 20.0,
+      "happiness_change": 5.0
+    },
+    {
+      "id": "train_delay_repay",
+      "message": "Your train was 2 hours late, but the 'Delay Repay' finally arrived.",
+      "money_change": 25.0,
+      "happiness_change": 10.0
+    },
+    {
+      "id": "shoe_leak",
+      "message": "It's raining and your shoes have a hole. You had to buy new ones.",
+      "money_change": -55.0,
+      "happiness_change": -12.0
+    },
+    {
+      "id": "library_fine",
+      "message": "That book was due three weeks ago. The fines have stacked up.",
+      "money_change": -15.0,
+      "happiness_change": -5.0
+    },
+    {
+      "id": "good_feedback",
+      "message": "Your tutor praised your latest essay. You're feeling motivated!",
+      "money_change": 0.0,
+      "happiness_change": 15.0,
+      "grades_change": 0.2
+    },
+    {
+      "id": "minor_flu",
+      "message": "You caught a minor bug. Spent a fortune on tissues and medicine.",
+      "money_change": -20.0,
+      "happiness_change": -15.0,
+      "grades_change": -0.1
+    },
+    {
+      "id": "kitchen_fire",
+      "message": "A small toaster fire ruined your breakfast and the toaster.",
+      "money_change": -30.0,
+      "happiness_change": -10.0
+    },
+    {
+      "id": "survey_reward",
+      "message": "An online survey site actually paid out for once.",
+      "money_change": 10.0,
+      "happiness_change": 5.0
+    },
+    {
+      "id": "forgotten_subscription",
+      "message": "An annual software subscription you forgot about just hit your account.",
+      "money_change": -70.0,
+      "happiness_change": -15.0
+    },
+    {
+      "id": "bet_win",
+      "message": "You placed a small bet on the football and your team actually won.",
+      "money_change": 40.0,
+      "happiness_change": 25.0
+    },
+    {
+      "id": "bus_pass_lost",
+      "message": "You lost your monthly bus pass and had to pay for a replacement.",
+      "money_change": -50.0,
+      "happiness_change": -20.0
+    }
+  ]
+}
