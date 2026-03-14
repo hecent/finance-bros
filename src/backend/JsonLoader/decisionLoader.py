@@ -50,3 +50,13 @@ class DecisionManager:
         self.decisions.remove(selected_decision)
 
         return selected_decision
+    
+    def pick(self):
+        # Extract weights for random.choices
+        weights = [d.weight for d in self.decisions]
+        
+        # Select one decision based on weights
+        # random.choices returns a list, so we take the first element [0]
+        selected_decision = random.choices(self.decisions, weights=weights, k=1)[0]
+
+        return selected_decision

@@ -93,12 +93,13 @@ E.g:
 """
 
 option_effects = []
+dm = DecisionManager("decisions.json")
 
 def getNewLevel():
     global option_effects
-    dm = DecisionManager("decisions.json")
-    if random()>0.9:
-        currentdecision = dm.pick_and_remove()
+    global dm
+    if True: #random()>0.9:
+        currentdecision = dm.pick() #dm.pick_and_remove() # uncomment to stop repeats
     else:
         response = client.models.generate_content(
             model="gemini-2.5-flash-lite",
@@ -115,7 +116,7 @@ def getNewLevel():
     newChoices = []
     newOptionEffects = []
     options = currentdecision.options
-    count = 1
+    count = 0
     for option in options:
         newChoices.append({
             "id": count,
