@@ -10,12 +10,30 @@ const statHistory = {
     grades: []
 };
 
+function setBalance(value) {
+    const el = document.getElementById("balance");
+    el.textContent = `£${value}`;
+    statHistory.balance.push(value)
+
+    el.classList.remove("positive", "negative", "neutral");
+
+    if (value > 0) {
+        el.classList.add("positive");
+    } else if (value < 0) {
+        el.classList.add("negative");
+    } else {
+        el.classList.add("neutral");
+    }
+}
+
 function renderState(state) {
+
+
     document.getElementById("year").textContent = `Year: ${state.year}`;
     document.getElementById("week").textContent = `Week: ${state.week}`;
     document.getElementById("scenario-text").textContent = state.scenario;
 
-    document.getElementById("balance").textContent = `£${state.balance}`;
+    setBalance(state.balance);// document.getElementById("balance").textContent = `£${state.balance}`;
     document.getElementById("happiness").textContent = state.happiness;
     document.getElementById("grades").textContent = state.grades;
 
@@ -29,6 +47,8 @@ function renderState(state) {
         btn.onclick = () => submitChoice(choice.id);
         choicesDiv.appendChild(btn);
     });
+
+    drawGraph(statHistory);
 }
 
 async function submitChoice(choiceId) {
@@ -135,6 +155,6 @@ function drawGraph(history) {
     drawLine(history.grades, "#27ae60", "Grades", 60);
 }
 
-drawGraph(statHistory);
+
 
 fetchState();
