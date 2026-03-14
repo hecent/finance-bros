@@ -3,13 +3,16 @@ import random
 from model.Decision import Decision
 from model.Option import Option
 from model.Effect import Effect
+import os
 
 class DecisionManager:
     def __init__(self, filename):
         self.decisions = self.load_decisions(filename)
 
     def load_decisions(self, filename):
-        with open(filename, "r") as f:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        filepath = os.path.join(base_dir, filename)
+        with open(filepath, "r") as f:
             data = json.load(f)
 
         weekly_decisions = []
