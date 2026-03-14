@@ -58,37 +58,6 @@ class Scenario(BaseModel):
 
 client = genai.Client(api_key=API_KEY)
 
-prompt = """
-This is a game where you play as a CS student at st andrews, each week you are given multiple different random decisions to make that can affect balance, happiness and grades. Given a probability you should create a random decison with options and outcomes (grades follow a 20-point scale, happiness is 0-100, balance is in £ and can go negative). The probability affects how liekly the event should be, with a high probability being something simple like going to cafe and a low probability being a major event like a house fire or getting drafted for ww3. The focus of the game is about teaching students money skills but also be fun and humorous at the same times, bear that in mind. A decision can have an umilimited number of options, or even just one option if its something like an event.
-
-E.g:
-{
-      "description": "You have a major Computer Science project due tomorrow, but your code is throwing endless errors.",
-      "options": [
-        {
-          "text": "Stay up all night debugging.",
-          "effect":{
-          "money": -5.0,
-          "happiness": -10.0,
-          "grades": 1.5}
-        },
-        {
-          "text": "Submit what you have and go to sleep.",
-          "effect":{
-          "money": 0.0,
-          "happiness": 8.0,
-          "grades": -1.5}
-        },
-        {
-          "text": "Pay a tutor for emergency help.",
-          "effect":{
-          "money": -40.0,
-          "happiness": -2.0,
-          "grades": 1.0}
-        }
-      ]
-}
-"""
 
 option_effects = []
 dm = DecisionManager("decisions.json")
@@ -96,9 +65,45 @@ dm = DecisionManager("decisions.json")
 def getNewLevel():
     global option_effects
     global dm
-    if True: #random()>0.9:
+    if random.random()>0.7:
         currentdecision = dm.pick() #dm.pick_and_remove() # uncomment to stop repeats
     else:
+        prompt = f"""
+This is a game where you play as a CS student at st andrews, each week you are given multiple different random decisions to make that can affect balance, happiness and grades. Given a probability you should create a random decision with options and outcomes (grades follow a 20-point scale, happiness is 0-100, balance is in £ and can go negative). The focus of the game is about teaching students money skills but also be fun and humorous at the same time.
+
+Example:
+{{
+  "description": "You have a major Computer Science project due tomorrow, but your code is throwing endless errors.",
+  "options": [
+    {{
+      "text": "Stay up all night debugging.",
+      "effect": {{
+        "money": -5.0,
+        "happiness": -10.0,
+        "grades": 1.5
+      }}
+    }},
+    {{
+      "text": "Submit what you have and go to sleep.",
+      "effect": {{
+        "money": 0.0,
+        "happiness": 8.0,
+        "grades": -1.5
+      }}
+    }},
+    {{
+      "text": "Pay a tutor for emergency help.",
+      "effect": {{
+        "money": -40.0,
+        "happiness": -2.0,
+        "grades": 1.0
+      }}
+    }}
+  ]
+}}
+
+Current game state: {game_state}
+"""
         response = client.models.generate_content(
             model="gemini-2.5-flash-lite",
             contents=prompt,
