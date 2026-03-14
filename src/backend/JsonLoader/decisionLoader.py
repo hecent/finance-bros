@@ -1,31 +1,86 @@
-import json
+# import json
 
+# from model.Decision import Decision
+# from model.Option import Option
+# from model.Effect import Effect
+
+# def load_decisions(filename):
+#     with open(filename, "r") as f:
+#         data = json.load(f)
+
+#     weekly_decisions = []
+
+#     for tempData in data["weekly_decisions"]:
+
+#         options = []
+
+#         for tempOption in tempData["options"]:
+#             effect = Effect(
+#                 money=tempOption["balance_change"],
+#                 happiness=tempOption["happiness_change"],
+#                 grades=tempOption["grades_change"]
+#             )
+
+#             option = Option(tempOption["option_text"], effect)
+#             options.append(option)
+
+#         weight = tempData.get("weight",1)
+#         decision = Decision(tempData["question"], options, weight)
+#         weekly_decisions.append(decision)
+
+#     return weekly_decisions
+
+
+import json
+import random
 from model.Decision import Decision
 from model.Option import Option
 from model.Effect import Effect
 
-def load_decisions(filename):
-    with open(filename, "r") as f:
-        data = json.load(f)
+class DecisionManager:
+    def __init__(self, filename):
+        self.decisions = self.load_decisions(filename)
 
-    weekly_decisions = []
+    def load_decisions(self, filename):
+        with open(filename, "r") as f:
+            data = json.load(f)
 
-    for tempData in data["weekly_decisions"]:
+        weekly_decisions = []
 
-        options = []
+        for tempData in data["weekly_decisions"]:
+            options = []
+            for tempOption in tempData["options"]:
+                effect = Effect(
+                    money=tempOption["balance_change"],
+                    happiness=tempOption["happiness_change"],
+                    grades=tempOption["grades_change"]
+                )
+                option = Option(tempOption["option_text"], effect)
+                options.append(option)
 
-        for tempOption in tempData["options"]:
-            effect = Effect(
-                money=tempOption["balance_change"],
-                happiness=tempOption["happiness_change"],
-                grades=tempOption["grades_change"]
-            )
+            # Map "probability" from JSON to your weight attribute
+            weight = tempData.get("probability", 1.0)
+            decision = Decision(tempData["question"], options, weight)
+            weekly_decisions.append(decision)
 
-            option = Option(tempOption["option_text"], effect)
-            options.append(option)
+        return weekly_decisions
 
-        weight = tempData.get("weight",1)
-        decision = Decision(tempData["question"], options, weight)
-        weekly_decisions.append(decision)
+    def pick_and_remove(self):
+        if not self.decisions:
+            return None
 
-    return weekly_decisions
+        # Extract weights for random.choices
+        weights = [d.weight for d in self.decisions]
+        
+        # Select one decision based on weights
+        # random.choices returns a list, so we take the first element [0]
+        selected_decision = random.choices(self.decisions, weights=weights, k=1)[0]
+
+        # Remove it from the list so it can't be picked again
+        self.decisions.remove(selected_decision)
+
+        return selected_decision
+
+# Usage example:
+# manager = DecisionManager("decisions.json")
+# current_decision = manager.pick_and_remove()
