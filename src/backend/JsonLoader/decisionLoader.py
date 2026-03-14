@@ -11,7 +11,7 @@ def load_decisions(filename):
     weekly_decisions = []
 
     for tempData in data["weekly_decisions"]:
-        
+
         options = []
 
         for tempOption in tempData["options"]:
@@ -24,7 +24,8 @@ def load_decisions(filename):
             option = Option(tempOption["option_text"], effect)
             options.append(option)
 
-        decision = Decision(tempData["question"], options)
+        weight = tempData.get("weight",1)
+        decision = Decision(tempData["question"], options, weight)
         weekly_decisions.append(decision)
 
     return weekly_decisions
