@@ -6,14 +6,11 @@ async function fetchState() {
 
 const statHistory = {
     balance: [],
-    happiness: [],
-    grades: []
 };
 
 function setBalance(value) {
     const el = document.getElementById("balance");
     el.textContent = `£${value}`;
-
     el.classList.remove("positive", "negative", "neutral");
 
     if (value > 0) {
@@ -28,7 +25,6 @@ function setBalance(value) {
 function setGrade(value) {
     const el = document.getElementById("grades");
     el.textContent = value.toFixed(1);
-
     el.classList.remove("first", "two-one", "two-two", "third", "fail");
 
     if (value >= 16.5) {
@@ -46,14 +42,31 @@ function setGrade(value) {
 
 function updateHistory(state) {
     statHistory.balance.push(state.balance);
-    statHistory.happiness.push(state.happiness);
-    statHistory.grades.push(state.grades);
+}
+
+async function resetState() {
+    const res = await fetch("/reset");
+    const state = await res.json();
+    renderState(state);
 }
 
 function renderState(state) {
     document.getElementById("year").textContent = `Year: ${state.year}`;
     document.getElementById("week").textContent = `Week: ${state.week}`;
-    document.getElementById("scenario-text").textContent = state.scenario;
+    
+    if (state.game_over === true) {
+        let score = (state.happiness + state.balance + state.grades) / 100;
+        alert(`Game over. Final Score: ${score.toFixed(2)}`);
+        resetState();
+        return;
+    }
+
+    // Handle Text Animation triggering
+    const scenarioText = document.getElementById("scenario-text");
+    scenarioText.classList.remove("animate-text");
+    void scenarioText.offsetWidth; // Trigger DOM reflow to restart animation
+    scenarioText.textContent = state.scenario;
+    scenarioText.classList.add("animate-text");
 
     setBalance(state.balance);
     document.getElementById("happiness").textContent = state.happiness.toFixed(1);
@@ -64,10 +77,13 @@ function renderState(state) {
     const choicesDiv = document.getElementById("choices");
     choicesDiv.innerHTML = "";
 
-    state.choices.forEach(option => {
+    // Render Buttons with staggered animation
+    state.choices.forEach((option, index) => {
         const btn = document.createElement("button");
-        btn.className = "choice-btn";
+        btn.className = "choice-btn animate-btn";
         btn.textContent = option.text;
+        // Stagger the animation delay so buttons cascade in
+        btn.style.animationDelay = `${index * 0.1}s`; 
         btn.onclick = () => submitChoice(option.id);
         choicesDiv.appendChild(btn);
     });
@@ -98,21 +114,11 @@ function drawGraph(history) {
 
     ctx.clearRect(0, 0, width, height);
 
-    const allValues = [
-        ...history.balance,
-        ...history.happiness,
-        ...history.grades
-    ];
+    if (history.balance.length === 0) return;
 
-    if (allValues.length === 0) return;
-
-    const minValue = Math.min(...allValues);
-    const maxValue = Math.max(...allValues);
-    const weekCount = Math.max(
-        history.balance.length,
-        history.happiness.length,
-        history.grades.length
-    );
+    const minValue = Math.min(...history.balance, 0);
+    const maxValue = Math.max(...history.balance, 0);
+    const weekCount = history.balance.length;
 
     function xScale(i) {
         if (weekCount <= 1) return padding;
@@ -123,56 +129,66 @@ function drawGraph(history) {
         return height - padding - ((value - minValue) / (maxValue - minValue || 1)) * (height - padding * 2);
     }
 
-    function drawLine(data, color, label, labelY) {
-        if (data.length === 0) return;
-
-        ctx.beginPath();
-        ctx.strokeStyle = color;
-        ctx.lineWidth = 2;
-
-        data.forEach((value, i) => {
-            const x = xScale(i);
-            const y = yScale(value);
-
-            if (i === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-        });
-
-        ctx.stroke();
-
-        ctx.fillStyle = color;
-        data.forEach((value, i) => {
-            const x = xScale(i);
-            const y = yScale(value);
-
-            ctx.beginPath();
-            ctx.arc(x, y, 3, 0, Math.PI * 2);
-            ctx.fill();
-        });
-
-        ctx.fillText(label, width - 100, labelY);
-    }
-
-    // axes
-    ctx.strokeStyle = "#333";
+    // Clean up Graph Grid Styling
+    ctx.strokeStyle = "#e5e7eb";
     ctx.lineWidth = 1;
+
+    // Y axis
     ctx.beginPath();
     ctx.moveTo(padding, padding);
     ctx.lineTo(padding, height - padding);
-    ctx.lineTo(width - padding, height - padding);
     ctx.stroke();
 
-    // x-axis labels
-    ctx.fillStyle = "#333";
-    ctx.font = "12px Arial";
+    // X axis at y = 0
+    const zeroY = yScale(0);
+    ctx.beginPath();
+    ctx.moveTo(padding, zeroY);
+    ctx.lineTo(width - padding, zeroY);
+    ctx.strokeStyle = "#9ca3af";
+    ctx.stroke();
+
+    // Y axis ticks and labels
+    ctx.fillStyle = "#6b7280";
+    ctx.font = "12px Inter, Arial";
+
+    const tickCount = 5;
+    for (let i = 0; i <= tickCount; i++) {
+        const value = minValue + (i / tickCount) * (maxValue - minValue);
+        const y = yScale(value);
+        ctx.fillText(value.toFixed(0), padding - 35, y + 4);
+    }
+
+    // X-axis labels
     for (let i = 0; i < weekCount; i++) {
         const x = xScale(i);
         ctx.fillText(`W${i + 1}`, x - 10, height - padding + 20);
     }
 
-    drawLine(history.balance, "#2e86de", "Balance", 20);
-    drawLine(history.happiness, "#e67e22", "Happiness", 40);
-    drawLine(history.grades, "#27ae60", "Grades", 60);
+    // Draw Line
+    ctx.beginPath();
+    ctx.strokeStyle = "#00539b";
+    ctx.lineWidth = 3;
+
+    history.balance.forEach((value, i) => {
+        const x = xScale(i);
+        const y = yScale(value);
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+
+    // Draw Points
+    ctx.fillStyle = "#00539b";
+    history.balance.forEach((value, i) => {
+        const x = xScale(i);
+        const y = yScale(value);
+        ctx.beginPath();
+        ctx.arc(x, y, 5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = "#fff";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+    });
 }
 
 fetchState();

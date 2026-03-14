@@ -4,45 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University Life Sim</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="app">
-        <div class="left-panel">
-            <h1>University Life Sim</h1>
-            <div class="info-row">
-                <span id="year"></span>
-                <span id="week"></span>
-            </div>
+        <main class="left-panel">
+            <header>
+                <h1>University Life Sim</h1>
+                <div class="info-row">
+                    <span id="year" aria-live="polite"></span>
+                    <span id="week" aria-live="polite"></span>
+                    <a href="frontend/tutorial.html" class="tutorial-link">Tutorial</a>
+                </div>
+            </header>
 
-            <div class="scenario-box">
+            <section class="scenario-box" aria-live="polite">
                 <h2>Decision</h2>
-                <p id="scenario-text"></p>
-            </div>
+                <p id="scenario-text" class="animate-text"></p>
+            </section>
 
-            <div id="choices" class="choices"></div>
-        </div>
+            <div id="choices" class="choices" role="group" aria-label="Decision Options"></div>
+        </main>
 
-        <div class="right-panel">
+        <aside class="right-panel">
             <h2>Stats</h2>
 
             <div class="stat-card">
                 <label>Balance</label>
-                <div id="balance"></div>
+                <div id="balance" aria-live="polite" class="stat-value"></div>
             </div>
 
             <div class="stat-card">
                 <label>Happiness</label>
-                <div id="happiness"></div>
+                <div id="happiness" aria-live="polite" class="stat-value"></div>
             </div>
 
             <div class="stat-card">
                 <label>Grades</label>
-                <div id="grades"></div>
+                <div id="grades" aria-live="polite" class="stat-value"></div>
             </div>
 
-            <canvas id="statsGraph" width="600" height="300"></canvas>
-        </div>
+            <div class="graph-container">
+                <canvas id="statsGraph" width="600" height="300" role="img" aria-label="Line graph tracking balance over time"></canvas>
+            </div>
+        </aside>
     </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
