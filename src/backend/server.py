@@ -46,6 +46,18 @@ def choose():
 
     # update game state here
 
+    if choice_id == 1:
+        game_state["grades"] += 5
+        game_state["happiness"] -= 5
+        game_state["scenario"] = "You finished your assignment and feel relieved."
+    elif choice_id == 2:
+        game_state["balance"] -= 20
+        game_state["happiness"] += 10
+        game_state["grades"] -= 5
+        game_state["scenario"] = "You had fun but your assignment suffered."
+
+    game_state["week"] += 1
+
     return jsonify(game_state)
 
 
