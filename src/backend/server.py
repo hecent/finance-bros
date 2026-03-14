@@ -36,7 +36,7 @@ game_state = {
     "scenario": "",
     "passive_event_text": "",
     "last_passive_week": -3, # Ensures an event can trigger from week 1
-    "balance": 1000,
+    "balance": 10,
     "happiness": 50,
     "grades": 12,
     "choices": []
