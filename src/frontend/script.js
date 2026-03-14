@@ -46,6 +46,12 @@ function updateHistory(state) {
     statHistory.balance.push(state.balance);
 }
 
+async function resetState() {
+    const res = await fetch("/reset");
+    const state = await res.json();
+    renderState(state);
+}
+
 function renderState(state) {
     document.getElementById("year").textContent = `Year: ${state.year}`;
     document.getElementById("week").textContent = `Week: ${state.week}`;
@@ -53,6 +59,7 @@ function renderState(state) {
     if (state.game_over === true) {
         let score = (state.happiness + state.balance + state.grades) / 100
         alert(`Game over. Score: ${score}`);
+        resetState()
     }
 
     setBalance(state.balance);
